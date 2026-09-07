@@ -235,6 +235,7 @@ export function useResults(examId: string) {
           grade: gradeFor(pct),
           result: !attempted.length ? "—" : failed ? "FAIL" : "PASS",
           hasMarks: attempted.length > 0,
+          rank: 0,
         };
       })
       .filter((r) => r.hasMarks);
