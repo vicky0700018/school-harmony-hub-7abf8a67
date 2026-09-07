@@ -301,7 +301,7 @@ export function FeeCertificate() {
   const st = useCertificateState("FEE");
   const { invoices, payments, settings } = useApp();
   const fees = st.student ? feeSummary(invoices, st.student.id) : null;
-  const paidRows = st.student ? payments.filter((p: any) => p.studentId === st.student.id) : [];
+  const paidRows = payments.filter((p: any) => p.studentId === st.studentId);
   return (
     <>
       <PageHeader title="Fee Certificate" subtitle="Statement of fees paid during the session." />
